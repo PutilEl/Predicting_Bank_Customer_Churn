@@ -1,0 +1,18 @@
+# Виртуальное окружение
+env/
+venv/
+*.env
+
+# Файлы среды разработки
+.idea/
+.vscode/
+*.iml
+
+# Логи и временные файлы
+*.log
+*.bak
+*.swp
+
+# Системные файлы
+Thumbs.db  # Windows
+.DS_Store  # macOS

@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS churn_predictions (
+client_id String,                 	 -- Уникальный ID клиента (String — универсально)
+predicted_churn_prob Float32,     	 -- Вероятность оттока (дробное число)
+customer_age UInt8,               	 -- Возраст клиента
+gender String,				 -- Пол клиента
+marital_status String,            	 -- Семейное положение
+card_category String,			 -- Тип карты
+credit_limit Float32,             	 -- Кредитный лимит
+customer_satisfaction_score Float32,     -- Оценка удовлетворённости клиента сервисом
+credit_limit_change_yoy Float32,	 -- Изменение кредитного лимита за год
+created_at DateTime DEFAULT now() 	 -- Время записи (заполняется автоматически)
+)
+ENGINE = MergeTree()                 -- Оптимальный движок для аналитики в ClickHouse
+ORDER BY client_id;                  -- Ключ сортировки (обязателен для MergeTree)
